@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+body > .title {
+  padding: 0px 12px;
+  border-bottom: solid 4px black;
+}
+
+body > .grid {
+  width: 80vh;
+  height: 80vh;
+  background-color: aqua;
+  border: inset 16px red;
+}
