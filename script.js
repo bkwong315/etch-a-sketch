@@ -17,7 +17,14 @@ const calcGridSize = (dim) => {
 };
 
 const init = () => {
-  const dim = prompt("Enter grid size:");
+  let dim;
+  let isValid = false;
+
+  while (!isValid) {
+    dim = prompt("Enter grid size (e.g. 1 - 100):");
+    if (dim <= 100 && dim >= 1) isValid = true;
+  }
+
   const grid = document.querySelector(".grid");
 
   calcGridSize(dim);
