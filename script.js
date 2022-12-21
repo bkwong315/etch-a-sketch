@@ -5,3 +5,10 @@ const createGridItem = (row, col) => {
 
   return gridItem;
 };
+
+const calcGridSize = (dim) => {
+  const grid = document.querySelector(".grid");
+
+  grid.style.gridTemplateColumns = `repeat(${dim}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${dim}, 1fr)`;
+};
