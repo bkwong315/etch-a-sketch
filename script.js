@@ -16,7 +16,17 @@ const calcGridSize = (dim) => {
   grid.style.gridTemplateRows = `repeat(${dim}, 1fr)`;
 };
 
-const init = () => {
+const clearGrid = () => {
+  const grid = document.querySelector(".grid");
+
+  while (grid.firstElementChild) {
+    grid.removeChild(grid.firstElementChild);
+  }
+};
+
+const createGrid = () => {
+  clearGrid();
+
   let dim;
   let isValid = false;
 
@@ -37,3 +47,9 @@ const init = () => {
     }
   }
 };
+
+window.addEventListener("load", (event) => {
+  const createBtn = document.querySelector(".create-btn");
+
+  createBtn.addEventListener("click", createGrid);
+});
