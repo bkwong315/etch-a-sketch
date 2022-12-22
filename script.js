@@ -2,8 +2,13 @@ const createGridItem = (row, col) => {
   const gridItem = document.createElement("div");
   gridItem.style.gridColumn = `${col} / ${col + 1}`;
   gridItem.style.gridRow = `${row} / ${row + 1}`;
+  gridItem.style.backgroundColor = "rgba(0,0,0,0)";
+  gridItem.setAttribute("alpha", 0);
   gridItem.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor = "orange";
+    e.target.setAttribute("alpha", +e.target.getAttribute("alpha") + 0.1);
+    e.target.style.backgroundColor = `rgba(0,0,0,${e.target.getAttribute(
+      "alpha"
+    )}`;
   });
 
   return gridItem;
